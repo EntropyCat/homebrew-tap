@@ -13,13 +13,15 @@ class Entropycat < Formula
 
   def install
     bin.install "entropycat"
+    (share/"entropycat").install "config.yaml"
     (share/"entropycat").install "THIRD_PARTY_LICENSES.txt"
+  end
 
+  def post_install
     config_dir  = Pathname.new(Dir.home)/".entropycat"
     config_file = config_dir/"config.yaml"
     unless config_file.exist?
       config_dir.mkpath
-      (share/"entropycat").install "config.yaml"
       config_file.write((share/"entropycat"/"config.yaml").read)
     end
   end

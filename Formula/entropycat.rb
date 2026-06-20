@@ -18,8 +18,7 @@ class Entropycat < Formula
   end
 
   def post_install
-    require "etc"
-    real_home   = Pathname.new(Etc.getpwuid.dir)
+    real_home   = Pathname.new(`eval echo ~#{ENV["USER"]}`.chomp)
     config_dir  = real_home/".entropycat"
     config_file = config_dir/"config.yaml"
     unless config_file.exist?

@@ -18,11 +18,16 @@ class Entropycat < Formula
   end
 
   def post_install
+    ohai "post_install running..."
     config_dir  = Pathname.new(Dir.home)/".entropycat"
     config_file = config_dir/"config.yaml"
+    ohai "config_dir: #{config_dir}"
+    ohai "config_file exists: #{config_file.exist?}"
+    ohai "share path: #{share/"entropycat"/"config.yaml"}"
     unless config_file.exist?
       config_dir.mkpath
       config_file.write((share/"entropycat"/"config.yaml").read)
+      ohai "config file created at #{config_file}"
     end
   end
 

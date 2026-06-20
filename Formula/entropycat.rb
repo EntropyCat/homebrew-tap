@@ -25,6 +25,8 @@ class Entropycat < Formula
       config_dir.mkpath
       config_file.write((share/"entropycat"/"config.yaml").read)
     end
+  rescue => e
+    opoo "post_install error: #{e.class}: #{e.message}\n#{e.backtrace.first(5).join("\n")}"
   end
 
   def caveats

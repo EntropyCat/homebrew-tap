@@ -1,7 +1,7 @@
 class Entropycat < Formula
   desc "Real-time data quality agent for Kafka streams"
   homepage "https://entropycat.io"
-  version "0.1.13"
+  version "0.1.14"
   license "Proprietary"
 
   on_macos do
@@ -38,6 +38,7 @@ class Entropycat < Formula
     log_path var/"log/entropycat.log"
     error_log_path var/"log/entropycat.log"
     working_dir var
+    environment_variables LANG: "en_US.UTF-8", LC_ALL: "en_US.UTF-8"
   end
 
   test do

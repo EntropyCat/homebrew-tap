@@ -20,7 +20,7 @@ class Entropycat < Formula
   def caveats
     <<~EOS
       Run `entropycat` to complete setup. You will be prompted for your
-      Kafka brokers and Slack bot token.
+      Kafka brokers and Slack bot token. 
     EOS
   end
 

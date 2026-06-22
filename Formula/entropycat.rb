@@ -1,17 +1,17 @@
 class Entropycat < Formula
   desc "Real-time data quality agent for Kafka streams"
   homepage "https://entropycat.io"
-  version "0.2.5"
+  version "0.2.6"
   license "Proprietary"
 
   on_macos do
     on_arm do
       url "https://github.com/EntropyCat/entropycat/releases/download/v#{version}/entropycat_#{version}_darwin_arm64.zip"
-      sha256 "4640d116e7aa9e4c9d31230ee501a0fc9375043ed33d787798395354793544b5"
+      sha256 "d1efb27ed943de52b82a82e112724e71cb75aa3a65f65ca7a92a39e12fd3397f"
     end
     on_intel do
       url "https://github.com/EntropyCat/entropycat/releases/download/v#{version}/entropycat_#{version}_darwin_x86_64.zip"
-      sha256 "478f05b0cdd5d2f4d4a2fe3da85a421c2b473fd44148fd9bbc318e0b8a6ef34b"
+      sha256 "ec380588397960cd690239728db215d8da221e408b88e57f5647ffe5b25c7f9a"
     end
   end
 

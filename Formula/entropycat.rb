@@ -16,13 +16,15 @@ class Entropycat < Formula
   end
 
   def install
-    bin.install "entropycat"
-    (share/"entropycat").install "THIRD_PARTY_LICENSES.txt"
+    # standalone Nuitka build: a folder of the launcher + its dylibs/data.
+    # Install the whole thing into libexec and symlink just the launcher onto PATH.
+    libexec.install Dir["*"]
+    bin.install_symlink libexec/"entropycat"
   end
 
   def caveats
     <<~EOS
-      Run `entropycat` to complete setup. You will be prompted for your
+      Run `entropycat init` to complete setup. You will be prompted for your
       Kafka brokers and Slack bot token. 
     EOS
   end

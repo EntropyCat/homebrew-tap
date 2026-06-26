@@ -1,23 +1,22 @@
 class Entropycat < Formula
   desc "Real-time data quality agent for Kafka streams"
   homepage "https://entropycat.io"
-  version "0.2.8"
+  version "0.2.9"
   license "Proprietary"
 
   on_macos do
     on_arm do
       url "https://github.com/EntropyCat/entropycat/releases/download/v#{version}/entropycat_#{version}_darwin_arm64.zip"
-      sha256 "98b5dc664f2206569a6fa642e7ac8e9ccd1e39e8551079f78832543980dfc3c9"
+      sha256 "396f23ea06ec66afd3b1a241fa024e249bd8c0c4e97c2678b4738a88bc295e1e"
     end
     on_intel do
       url "https://github.com/EntropyCat/entropycat/releases/download/v#{version}/entropycat_#{version}_darwin_x86_64.zip"
-      sha256 "f0f5c3b7309d57238f8c585e88f96616ae76950d621a8202f55409871fc6cf8a"
+      sha256 "54f62af2425a4e80ec5331f13a0aff106365c57f377f1b036613be171a773536"
     end
   end
 
   def install
     bin.install "entropycat"
-    bin.install "entropycatd"
     (share/"entropycat").install "THIRD_PARTY_LICENSES.txt"
   end
 
